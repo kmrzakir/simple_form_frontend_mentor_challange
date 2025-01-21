@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- header -->
+
+      <div class="head">
+        <h2>Contact Us</h2>
+      </div>
+
+      <!-- first name and last name section -->
+      <section class="firstName_and_lastName_section">
+        <div>
+          <label for="firstName">First Name <sup>*</sup></label>
+          <input type="text" id="firstName" />
+          <p class="error">This field is required</p>
+        </div>
+        <div>
+          <label for="lastName">Last Name <sup>*</sup></label>
+          <input type="text" id="lastName" />
+          <p class="error">This field is required</p>
+        </div>
+      </section>
+
+      <!-- email section -->
+      <section class="email_section">
+        <label for="email">Email Address <sup>*</sup></label>
+        <input type="text" id="email" />
+        <p class="error">This field is required</p>
+      </section>
+
+      <!-- quert type section -->
+      <section class="queryType_section">
+        <label for="">Quert Type <sup>*</sup></label>
+        <section>
+          <div>
+            <input type="radio" name="QT" id="general_enquiry" />
+            <label for="general_enquiry">General Enquiry</label>
+          </div>
+          <div>
+            <input type="radio" name="SR" id="support_request" />
+            <label for="support_request">Support Request</label>
+          </div>
+        </section>
+        <p class="error">This field is required</p>
+      </section>
+
+      <!-- message section -->
+      <section class="message_section">
+        <label for="message">Message <sup>*</sup></label>
+        <textarea name="message" id="message" cols="20" rows="4"></textarea>
+        <p class="error">This field is required</p>
+      </section>
+
+      <!-- footer section -->
+      <section class="checkbox_section">
+        <div>
+          <input type="checkbox" name="checkbox" id="contacted_by" />
+          <label for="contacted_by"
+            >I consent to being contacted by the team <sup>*</sup></label
+          >
+        </div>
+        <p class="error">This field is required</p>
+      </section>
+
+      <!-- submit buttion -->
+      <button>Submit</button>
+    </main>
+  </body>
+</html>

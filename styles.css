@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@layer variables {
+  :root {
+    /* colors here */
+    --green-200: hsl(148, 38%, 91%);
+    --green-600: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(186, 15%, 59%);
+    --grey-900: hsl(187, 24%, 22%);
+
+    /* font size */
+    --fs: 1rem;
+
+    /* font weight */
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --ff: "Karla", serif;
+  }
+}
+
+body {
+  height: 100vh;
+  background-color: var(--grey-500);
+  font-family: var(--ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs);
+  font-weight: var(--fw-400);
+  /* padding-top: 100px; */
+}
+main {
+  background-color: var(--white);
+  width: 100%; /* Default to full width */
+  min-width: 250px; /* Minimum width */
+  max-width: 700px; /* Maximum width */
+  margin: 0px 10px; /* Center the container */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 20px;
+}
+main > section {
+  width: 100%;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--grey-500);
+  outline-color: var(--green-600);
+}
+label {
+  color: var(--grey-500);
+}
+sup {
+  color: var(--green-600);
+}
+section > div {
+  width: 100%;
+}
+.firstName_and_lastName_section,
+.queryType_section > section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.firstName_and_lastName_section > div,
+.email_section,
+.queryType_section,
+.message_section,
+.checkbox_section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+button {
+  width: 100%;
+  background-color: var(--green-600);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.queryType_section > section > div {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--grey-500);
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  column-gap: 10px;
+}
+.queryType_section > section > div input,
+.checkbox_section > div > input {
+  width: auto;
+  padding: 0px;
+}
+.checkbox_section > div {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.error {
+  color: red;
+  font-size: 10px;
+  display: none;
+}
+
+@media (width <= 450px) {
+  /* .firstName_and_lastName_section {
+    display: flex;
+    flex-direction: row;
+  }
+  .queryType_section > section {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+  } */
+  .firstName_and_lastName_section,
+  .queryType_section > section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}

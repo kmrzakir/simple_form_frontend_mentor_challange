@@ -32,9 +32,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
   font-size: var(--fs);
   font-weight: var(--fw-400);
-  /* padding-top: 100px; */
 }
 main {
   background-color: var(--white);
@@ -120,15 +121,10 @@ button {
 }
 
 @media (width <= 450px) {
-  /* .firstName_and_lastName_section {
-    display: flex;
-    flex-direction: row;
+  body {
+    height: max-content;
+    margin: 10px;
   }
-  .queryType_section > section {
-    display: flex;
-    row-gap: 10px;
-    flex-direction: column;
-  } */
   .firstName_and_lastName_section,
   .queryType_section > section {
     display: flex;

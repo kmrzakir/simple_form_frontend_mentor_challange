@@ -61,6 +61,10 @@ textarea {
   border: 1px solid var(--grey-500);
   outline-color: var(--green-600);
 }
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--green-600);
+}
 label {
   color: var(--grey-500);
 }
@@ -131,4 +135,46 @@ button {
     flex-direction: column;
     row-gap: 10px;
   }
+}
+
+#parent_alertBox {
+  position: absolute;
+  background-color: var(--grey-900);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  top: -100px;
+}
+@keyframes dropAnimation {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 50px; /* The final position */
+  }
+}
+
+/* The visible state with animation */
+.runAnimation {
+  animation: dropAnimation 0.5s ease forwards;
+  opacity: 1;
+}
+#alertBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+#alertBox > h6 {
+  font-family: sans-serif;
+  color: var(--grey-500);
+  font-size: 0.8;
+}
+#alertBox > strong {
+  color: white;
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 1.4rem;
 }

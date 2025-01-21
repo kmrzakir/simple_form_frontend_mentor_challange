@@ -1,75 +1,85 @@
-const first_name = document.getElementById("first-name");
-const being_conatct = document.getElementById("being-conatct");
+// selectying
+const submitBtn = document.getElementsByTagName("button")[0];
 const error = document.getElementsByClassName("error");
-const input_field = document.getElementsByClassName("input-field");
-const radio_buttions = document.getElementsByName("radio-btn");
-const message_input = document.getElementById("mesage-input");
-const checkbox_field = document.getElementById("being-conatct");
-const custom_alert_box = document.getElementsByClassName("custom-alert-box");
-const close_alert_box_btn = document.getElementById("close");
-const radio_btns = document.getElementsByName("radio-btn");
+const radioButtion = document.getElementsByName("QT");
+const parentAlertBox = document.getElementById("parent_alertBox");
+const closeDialogBtn = document.getElementById("close_btn");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const email = document.getElementById("email");
+const textArea = document.getElementById("message");
+const checkBox = document.getElementById("checkBox");
 
-const submit_btn = document.getElementById("submit-btn");
+submitBtn.addEventListener("click", (event) => {
+  // check is all the input fields selelcted or not
+  const isAllFilled = isAllFieldsFilled(
+    firstName.value.trim(),
+    lastName.value.trim(),
+    email.value.trim(),
+    textArea.value.trim(),
+    checkBox
+  );
 
-// object for storing form data
-let data = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  quertType: "",
-  message: "",
-  isContracted: false,
-};
-
-let isAllFieldsFilled = 0;
-
-submit_btn.addEventListener("click", (event) => {
-  event.preventDefault();
-  // check is first name last name and email input field filled
-  for (let i = 0; i < input_field.length; i++) {
-    if (input_field[i].value.trim() == "") {
-      error[i].style.visibility = "visible";
-      isAllFieldsFilled++;
-      data.firstName = input_field[0].value.trim();
-      data.lastName = input_field[1].value.trim();
-      data.email = input_field[2].value.trim();
-    }
+  if (isAllFilled) {
+    // parentAlertBox.style.display = "block";
+    parentAlertBox.classList.add("runAnimation");
   }
-
-  // check for radio buttions
-
-  if (!radio_buttions[0].checked && !radio_buttions[1].checked) {
-    error[3].style.visibility = "visible";
-  }
-
-  for (let i = 0; i < radio_btns.length; i++) {
-    if (radio_btns[i].checked) {
-      data.quertType = radio_btns[i].value;
-    }
-  }
-
-  // check for message field
-  if (message_input.value.trim() == "") {
-    error[4].style.visibility = "visible";
-  }
-  data.message = message_input.value.trim();
-
-  // //  check for check box
-  if (!checkbox_field.checked) {
-    // alert("check box is not checked");
-    error[5].style.visibility = "visible";
-  }
-
-  if (isAllFieldsFilled == 0) {
-    custom_alert_box[0].style.visibility = "visible";
-  }
-
-  // console.log("kkkkk");
-  alert(data);
 });
 
-close_alert_box_btn.addEventListener("click", () => {
-  custom_alert_box[0].style.visibility = "hidden";
+function isAllFieldsFilled(firstName, lastName, email, textArea, checkBox) {
+  let isAllFilled = true;
+  if (firstName == "") {
+    error[0].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[0].style.display = "none";
+  }
+  if (lastName == "") {
+    error[1].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[1].style.display = "none";
+  }
+  if (email == "") {
+    error[2].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[2].style.display = "none";
+  }
+  if (!radioButtion[0].checked && !radioButtion[1].checked) {
+    error[3].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[3].style.display = "none";
+  }
+  if (textArea == "") {
+    error[4].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[4].style.display = "none";
+  }
+  if (!checkBox.checked) {
+    error[5].style.display = "block";
+    isAllFilled = false;
+  } else {
+    error[5].style.display = "none";
+  }
+  return isAllFilled;
+}
+
+// close the form submitted success dialog
+closeDialogBtn.addEventListener("click", () => {
+  parentAlertBox.style.display = "none";
+  clearAllInputs(firstName, lastName, email, textArea, checkBox);
 });
 
-// console.log("data");
+// clear all inputs after form has been submited succefully
+function clearAllInputs(firstName, lastName, email, textArea, checkBox) {
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  textArea.value = "";
+  checkBox.checked = false;
+  radioButtion[0].checked = false;
+  radioButtion[1].checked = false;
+}

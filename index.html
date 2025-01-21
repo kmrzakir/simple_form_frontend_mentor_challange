@@ -44,7 +44,7 @@
       <!-- email section -->
       <section class="email_section">
         <label for="email">Email Address <sup>*</sup></label>
-        <input type="text" id="email" />
+        <input type="email" id="email" />
         <p class="error">This field is required</p>
       </section>
 
@@ -52,12 +52,12 @@
       <section class="queryType_section">
         <label for="">Quert Type <sup>*</sup></label>
         <section>
-          <div>
+          <div class="radio_divs">
             <input type="radio" name="QT" id="general_enquiry" />
             <label for="general_enquiry">General Enquiry</label>
           </div>
-          <div>
-            <input type="radio" name="SR" id="support_request" />
+          <div class="radio_divs">
+            <input type="radio" name="QT" id="support_request" />
             <label for="support_request">Support Request</label>
           </div>
         </section>
@@ -74,8 +74,8 @@
       <!-- footer section -->
       <section class="checkbox_section">
         <div>
-          <input type="checkbox" name="checkbox" id="contacted_by" />
-          <label for="contacted_by"
+          <input type="checkbox" name="checkbox" id="checkBox" />
+          <label for="checkBox"
             >I consent to being contacted by the team <sup>*</sup></label
           >
         </div>
@@ -85,5 +85,15 @@
       <!-- submit buttion -->
       <button>Submit</button>
     </main>
+
+    <div id="parent_alertBox">
+      <div id="alertBox">
+        <strong id="close_btn">&times</strong>
+        <h6>Form Has been Submitted Succefully</h6>
+      </div>
+    </div>
+
+    <!-- link js file here -->
+    <script src="app.js"></script>
   </body>
 </html>
